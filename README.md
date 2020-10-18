@@ -1,4 +1,4 @@
-## Hotplate - React w/Typescript, Webpack, Babel config
+## Hotplate - React w/Typescript, Webpack, Babel
 
 In the project directory, you can run:
 
