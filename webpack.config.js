@@ -1,12 +1,18 @@
 // note: this format const var_name = require('pathname') is how you import in es5
 const path = require('path'),
-// const rules says any files that ends in tsx exclude it apart from node_modules files and use babel to load it
-// note: if you want webpack to read css and images you will add a rule to it here as well
-rules = [{
-    test: /|.tsx?/, // regex for all the files that end in this format
-    exclude: /node_modules/,
-    loader: 'babel-loader'
-}]
+  // const rules says any files that ends in tsx exclude it apart from node_modules files and use babel to load it
+  // note: if you want webpack to read css and images you will add a rule to it here as well
+  rules = [
+    {
+      test: /|.tsx?/, // regex for all the files that end in this format
+      exclude: /node_modules/,
+      use: 'babel-loader',
+    },
+    {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    },
+  ];
 
 // module.export is essentially the same as exports but for Node
 module.exports = {
